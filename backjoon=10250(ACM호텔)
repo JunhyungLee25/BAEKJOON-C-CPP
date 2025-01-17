@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    // 1<= H,W <= 99
+    int T;
+    int H, W, N;
+   
+    cin >> T;
+    for(int i=0; i<T; i++){
+        cin >> H >> W >> N;
+        cout << 100*(N % H)+(N / H) + 1
+    }
+}
