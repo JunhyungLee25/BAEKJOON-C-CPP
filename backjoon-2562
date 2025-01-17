@@ -2,32 +2,19 @@
 using namespace std;
 
 int main(){
-    int s;
-    int b;
     int A[100];
+    int maxval = 0;
+    int s = 0;
     for(int i=0; i<9; i++){
         cin >> A[i];
     }
-    for(int i=0; i<9; i++){
-        if( s == i){
-            s = i;
-            break;
-        }
-        else if( s== j){
+    for(int j=0; j<9; j++){
+        if(A[j] > maxval){
+            maxval = A[j];
             s = j;
-            break;
-        }
-        for(int j=0; j<9; j++){
-            if(A[i] > A[j]){
-                b = A[i];
-                s = i;
-            }
-            else if(A[i]<A[j]){
-                b = A[j];
-                s = j;
-            }
         }
     }
-    cout << b <<'\n';
-    cout << s;
+    
+    cout << maxval <<'\n';
+    cout << s + 1;
 }
