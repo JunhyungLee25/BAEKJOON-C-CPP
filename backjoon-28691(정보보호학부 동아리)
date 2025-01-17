@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    char d;
+    cin >> d;
+    if(d == 'M'){
+        cout << "MatKor";
+    }
+    else if(d == 'W'){
+        cout << "WiCys";
+    }
+    else if(d == 'C'){
+        cout << "CyKor";
+    }
+    else if(d == 'A'){
+        cout << "AlKor";
+    }
+    else if(d == '$'){
+        cout << "$clear";
+    }
+}
