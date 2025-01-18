@@ -2,9 +2,9 @@
 using namespace std;
 
 int main(){
-    int s1,s2;
+    float s1,s2;
     cin >> s1 >> s2;
-    if(s2 / s1 < 2){
+    if( s2/2 <= s1){
         cout << "E";
     }
     else {
