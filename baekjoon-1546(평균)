@@ -1,0 +1,27 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+double Mean(vector<double>& S, int N, double Max){ // 원본 참조(복사방지)로 속도 증가
+    double mval = 0;
+    for(int j=0; j<N; j++){
+        mval += (S[j] / Max)*100;
+    }
+    return mval / N;
+}
+
+int main(){
+    int N;
+    cin >> N;
+    
+    vector<double> S(N);
+    double Max = 0;
+    
+    for(int i=0; i<N; i++){
+        cin >> S[i];
+        if( Max < S[i]){
+            Max = S[i];
+        }
+    }
+    cout << Mean(S, N, Max);
+}
