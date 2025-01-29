@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+
+int CheckSum(int num){
+    int sum = num;
+    while(num > 0){
+        sum += num % 10; // 자릿수 더하기
+        num /= 10;
+    }
+    return sum;
+}
+
+int main(){
+    int N, SUM = 0;
+    cin >> N;
+    for(int i=1; i<N; i++){
+        if(CheckSum(i) == N){ 
+            SUM = i;
+            break;
+        }
+    }
+    cout << SUM;
+}
