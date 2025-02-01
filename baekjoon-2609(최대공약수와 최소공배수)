@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int N1,N2;
+    cin >> N1 >> N2;
+    
+    int a = N1, b = N2;
+    if(a < b) { // 유클리드 호제법
+        a = N2;
+        b = N1;
+    }
+    while(b != 0){
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+    cout << a << '\n' << (N1*N2)/a;
+    return 0;
+}
