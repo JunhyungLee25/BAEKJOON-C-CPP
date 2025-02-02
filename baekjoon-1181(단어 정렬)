@@ -1,0 +1,32 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+
+bool compareByLength(const string &a, const string &b){
+    if (a.length() == b.length()){ // 사전 순
+        return a < b;
+    }
+    else {
+        return a.length() < b.length(); // 길이 순
+    }
+}
+
+string S[20001];
+
+int main(){
+    int N;
+    cin >> N;
+    
+    for(int i=0; i<N; i++){
+        cin >> S[i];
+    }
+    sort(S, S+N, compareByLength);
+    cout << S[0] << '\n';
+    for(int j=1; j<N; j++){
+        if(S[j] != S[j-1]){
+            cout << S[j] << '\n';
+        }
+    }
+    return 0;
+}
