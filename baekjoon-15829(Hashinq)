@@ -1,0 +1,22 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    long long r = 1; 
+    const long long M = 1234567891;
+    long long H = 0;
+    
+    int L;
+    string s;
+    cin >> L >> s;
+    
+    for(int i=0; i<L; i++){
+        H = (H + (s[i]-'a'+1)* r % M) % M;
+        r = (r * 31) % M;
+    }
+    cout << H;
+}

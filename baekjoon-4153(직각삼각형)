@@ -1,0 +1,59 @@
+// 1 sort 구문 사용하지 않고 정렬없이 구하는 법
+#include<iostream>
+using namespace std;
+
+int main(){
+    int A[3];
+    int right = 0;
+    while(1){
+        for(int i=0; i<3; i++){
+            cin >> A[i];
+        }
+        if( A[0]==0 && A[1]==0 && A[2]==0){
+            break;
+        }
+        else if(A[0]*A[0] + A[1]*A[1] == A[2]*A[2]){
+            right++;
+        }
+        else if(A[0]*A[0] + A[2]*A[2] == A[1]*A[1]){
+            right++;
+        }
+        else if(A[1]*A[1] + A[2]*A[2] == A[0]*A[0]){
+            right++;
+        }
+        if( right == 1){
+            cout << "right" << '\n';
+            right = 0;
+        }
+        else { 
+            cout << "wrong" << '\n';
+            right = 0;
+        }
+    }
+}
+// 2 sort 구문 사용하여 정렬하기
+#include <iostream>
+#include <algorithm>  
+using namespace std;
+
+int main() {
+    int A[3];
+
+    while (1) {
+        for (int i = 0; i < 3; i++) {
+            cin >> A[i];
+        }
+        if (A[0] == 0 && A[1] == 0 && A[2] == 0) {
+            break;
+        }
+        // 배열 정렬 (가장 긴 변이 A[2]가 되도록)
+        sort(A, A + 3);
+        if (A[0] * A[0] + A[1] * A[1] == A[2] * A[2]) {
+            cout << "right\n";
+        } else {
+            cout << "wrong\n";
+        }
+    }
+
+    return 0;
+}

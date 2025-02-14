@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int Age;
+    int SP[20], Level[20];
+    while(1){
+        int leaf = 1;
+        cin >> Age;
+        if(Age == 0) { break;}
+        for(int i=0; i<Age; i++){
+            cin >> SP[i] >> Level[i];
+            leaf = leaf*SP[i]-Level[i];
+        }
+        cout << leaf <<'\n';
+    }
+    return 0;
+}

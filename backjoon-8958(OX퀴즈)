@@ -1,0 +1,22 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main(){
+    int T;
+    cin >> T;
+    string s;
+    for(int i=0; i<T; i++){
+        int score = 0; // OX입력 받기 전에 항상 초기화
+        int n = 1;
+        cin >> s;
+        for(int j=0; j<s.length(); j++){
+            if(s[j] == 'O'){
+                score += n;
+                n++;
+            }
+            else { n = 1;} // 점수 증가 초기화
+        }
+        cout << score << '\n';
+    }
+}

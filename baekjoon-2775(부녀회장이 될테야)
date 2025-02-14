@@ -1,0 +1,28 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int Resident(int k, int n){
+    vector<int> R(n);
+    for(int r=0; r<n; r++){
+        R[r] = r+1;
+    }
+    for(int f=0; f<k; f++){
+        for(int j=n-1; j>0; j--){\
+            for(int m=j-1; m>=0; m--){
+                R[j] += R[m]; 
+            }
+        }
+    }
+    return R[n];
+}
+
+int main(){
+    int T,k,n;
+    cin >> T;
+    for(int i=0; i<T; i++){
+        cin >> k >> n;
+        cout << Resident(k, n) << '\n';
+    }
+    return 0;
+}
